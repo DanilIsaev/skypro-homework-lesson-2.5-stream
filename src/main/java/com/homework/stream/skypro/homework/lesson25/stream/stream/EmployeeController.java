@@ -18,4 +18,9 @@ public class EmployeeController {
     public String pageWelcome() {
         return "Welcome";
     }
+
+    /*@GetMapping("/nat")
+    public String nat() {
+        return employeeService.natView();
+    }*/
 }
