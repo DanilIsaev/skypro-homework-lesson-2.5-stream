@@ -5,11 +5,11 @@ public class Employee {
     private String surnameEmployee;
     private String lastnameEmployee;
     private int departmentEmployee;
-    private float salaryEmployee;
+    private Integer salaryEmployee;
     private final int idEmployee;
     private static int idCounter = 0; // Счечик для выдачи id сотруднику
 
-    public Employee(String surnameEmployee, String nameEmployee, String lastnameEmployee, int departmentEmployee, float salaryEmployee) {
+    public Employee(String surnameEmployee, String nameEmployee, String lastnameEmployee, int departmentEmployee, Integer salaryEmployee) {
         this.surnameEmployee = surnameEmployee;
         this.nameEmployee = nameEmployee;
         this.lastnameEmployee = lastnameEmployee;
@@ -57,11 +57,11 @@ public class Employee {
         this.departmentEmployee = departmentEmployee;
     }
 
-    public float getSalaryEmployee() {
+    public Integer getSalaryEmployee() {
         return salaryEmployee;
     }
 
-    public void setSalaryEmployee(float salaryEmployee) {
+    public void setSalaryEmployee(Integer salaryEmployee) {
         this.salaryEmployee = salaryEmployee;
     }
 

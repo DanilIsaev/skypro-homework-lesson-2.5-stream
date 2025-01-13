@@ -1,4 +1,4 @@
-package com.homework.stream.skypro.homework.lesson25.stream.stream;
+package com.homework.stream.skypro.homework.lesson25.stream.stream.employee;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +19,7 @@ public class EmployeeController {
         return "Welcome";
     }
 
+    //Успешный вывод человека из List
     /*@GetMapping("/nat")
     public String nat() {
         return employeeService.natView();
