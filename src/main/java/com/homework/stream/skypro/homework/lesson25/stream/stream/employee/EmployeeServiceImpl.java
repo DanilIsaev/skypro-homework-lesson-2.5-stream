@@ -8,18 +8,18 @@ import java.util.*;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-    List<Employee> employeeList = new ArrayList<Employee>(List.of(
-            new Employee("Nat", "Nat", "Nat", 0, 30000),
+   private List<Employee> employeeList = new ArrayList<Employee>(List.of(
+            new Employee("Nat", "Nat", "Nat", 0, 30000.5),
             new Employee("tat", "tat", "tat", 1, 50000),
-            new Employee("yat", "yat", "yat", 2, 60000),
+            new Employee("yat", "yat", "yat", 2, 60000.67),
             new Employee("uat", "uat", "uat", 0, 70000),
-            new Employee("iat", "iat", "iat", 1, 80000),
+            new Employee("iat", "iat", "iat", 1, 80000.56),
             new Employee("oat", "oat", "oat", 2, 90000)
     ));
 
 
     @Override
-    public Collection<Employee> findAll() {
+    public List<Employee> findAll() {
         return Collections.unmodifiableList(employeeList);
     }
 

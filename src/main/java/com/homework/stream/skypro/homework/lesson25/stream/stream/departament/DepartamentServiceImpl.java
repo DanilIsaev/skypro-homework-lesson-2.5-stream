@@ -6,9 +6,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
+import static java.util.Comparator.comparingDouble;
 import static java.util.Comparator.comparingInt;
+import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 
 @Service
@@ -22,12 +23,11 @@ public class DepartamentServiceImpl implements DepartamentService {
 
     @Override
     public Employee findEmployeeWithMaxSalary(int departamentID) {
-        //Как найти максимальную зарплату, если значение зарплаты имеет тип данных float?
         return employeeService
                 .findAll()
                 .stream()
                 .filter(e -> e.getDepartmentEmployee() == departamentID)
-                .max(comparingInt(Employee::getSalaryEmployee))
+                .max(comparingDouble(Employee::getSalaryEmployee))
                 .orElseThrow(RuntimeException::new);
     }
 
@@ -37,7 +37,7 @@ public class DepartamentServiceImpl implements DepartamentService {
                 .findAll()
                 .stream()
                 .filter(e -> e.getDepartmentEmployee() == departamentID)
-                .min(comparingInt(Employee::getSalaryEmployee))
+                .min(comparingDouble(Employee::getSalaryEmployee))
                 .orElseThrow(RuntimeException::new);
     }
 
@@ -53,6 +53,9 @@ public class DepartamentServiceImpl implements DepartamentService {
 
     @Override
     public Map<Integer, List<Employee>> findEmployeeListByDepartament() {
-        return null;
+        return employeeService
+                .findAll()
+                .stream()
+                .collect(groupingBy(Employee::getDepartmentEmployee));
     }
 }

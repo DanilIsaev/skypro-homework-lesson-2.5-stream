@@ -19,9 +19,4 @@ public class EmployeeController {
         return "Welcome";
     }
 
-    //Успешный вывод человека из List
-    /*@GetMapping("/nat")
-    public String nat() {
-        return employeeService.natView();
-    }*/
 }

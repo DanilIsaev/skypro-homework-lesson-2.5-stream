@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    Collection<Employee> findAll();
+    List<Employee> findAll();
 
 }
